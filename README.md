@@ -157,8 +157,9 @@ git push origin main
 3. **Configure Service:**
    - **Name**: `image-classification` (or your preferred name)
    - **Environment**: Python 3
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn app:app`
+   - **Build Command**: `bash build.sh`
+   - **Start Command**: `gunicorn --workers 2 --timeout 60 --bind 0.0.0.0:$PORT app:app`
+   - *Tip:* The repo includes a `render.yaml` that sets these automatically when present.
    - **Environments** (optional):
      - Add any environment variables if needed
    - **Instance Type**: Free tier is sufficient for this demo
@@ -195,7 +196,7 @@ Typical metrics on digits dataset:
 | Package | Version | Purpose |
 |---------|---------|---------|
 | Flask | 2.3.3 | Web framework |
-| scikit-learn | 1.3.0 | Machine learning |
+| scikit-learn | 1.3.2 | Machine learning |
 | matplotlib | 3.7.2 | Plotting |
 | seaborn | 0.12.2 | Statistical visualization |
 | numpy | 1.24.3 | Numerical computing |
