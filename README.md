@@ -255,3 +255,5 @@ For issues or questions:
 ## Author
 
 Created as an educational project for image classification and ML deployment.
+
+**Redeploy trigger:** 2026-01-30T00:00:00Z — minor docs update to trigger Render rebuild.
