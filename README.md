@@ -4,12 +4,12 @@ A Flask web application for image classification (handwritten digits recognition
 
 ## Features
 
-- **Model Training**: Train a Random Forest classifier on the digits dataset
-- **Confusion Matrix**: Visual heatmap showing classification performance
-- **Classification Report**: Detailed metrics for each digit class
+- **Model Training**: Train a lightweight K-NN classifier on synthesized digits (no heavy build deps)
+- **Confusion Matrix**: Visual PNG confusion matrix generated server-side with Pillow
+- **Classification Report**: Detailed metrics for each digit class (precision/recall/f1/support)
 - **Image Prediction**: Upload custom images for prediction
 - **Responsive UI**: Beautiful, modern web interface
-- **Render-Ready**: Fully configured for cloud deployment
+- **Render-Ready**: Uses only wheel-friendly packages (Flask, numpy, Pillow) to avoid build failures on Render
 
 ## Project Structure
 
@@ -196,7 +196,7 @@ Typical metrics on digits dataset:
 | Package | Version | Purpose |
 |---------|---------|---------|
 | Flask | 2.3.3 | Web framework |
-| scikit-learn | 1.3.2 | Machine learning |
+| scikit-learn | removed | Machine learning (replaced by lightweight K-NN using numpy/Pillow) |
 | matplotlib | 3.7.2 | Plotting |
 | seaborn | 0.12.2 | Statistical visualization |
 | numpy | 1.24.3 | Numerical computing |
